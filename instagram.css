@@ -1,0 +1,116 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 5vh;
+}
+
+.my-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.image-logo {
+    width: 64vw;
+    height: 22vw;
+    margin-bottom: 10vh;
+    align-self: center;
+}
+
+.my-form input{
+    margin-bottom: 2vh;
+    padding: 5px 20px;
+    font-size: 11px;
+    min-width: 175px;
+    border: 1px solid rgb(189, 181, 181);
+    border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+}
+
+.forget-id{
+    align-self: center;
+    font-size: 13px;
+    margin-bottom: 14px;
+    margin-top: 9px;
+}
+
+.signup{
+    align-self: center;
+}
+
+.fblink{
+    align-self: center;
+    display: flex;
+   
+}
+
+.logbutt{
+    background-color: rgb(91, 209, 215);
+    color:white;
+    align-self: center;
+    border: none;
+    width: 219px;
+    border-radius: 7px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.fb-logo{
+    height: 5vh;
+    width: 5vh;
+}
+.fblink {
+    display : flex ;
+    justify-content: center ;
+    align-items: center ;;
+}
+.fblink .fab.fa-facebook,
+.fblink .fb-logo,
+.fblink a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.option{
+    color:#5a5a5a;
+    margin: 10px 0;
+    position: relative;
+    z-index: 10;
+    font-size: 13px;
+    margin-bottom: 36px ;
+} 
+
+.option:before{
+    position:absolute;
+    content:'';
+    width:90px;
+    height:1px;
+    background:#b6b6b6;
+    left:30px;
+    top:50%;
+    transform:translateY(-50%);
+    border-radius:50px;
+}
+
+.option:after{
+    position:absolute;
+    content:'';
+    width:90px;
+    height:1px;
+    background:#b6b6b6;
+    right:30px;
+    top:50%;
+    transform:translateY(-50%);
+    border-radius:50px;
+    z-index: -1 !important;
+}
+
+a {
+    text-decoration: none;
+}
